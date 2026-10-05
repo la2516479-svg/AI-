@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS ai_study_manager
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE ai_study_manager;
+
+CREATE TABLE IF NOT EXISTS study_tasks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    subject VARCHAR(50) NOT NULL,
+    minutes INT NOT NULL,
+    priority VARCHAR(10) NOT NULL DEFAULT '中',
+    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
